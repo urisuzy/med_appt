@@ -7,6 +7,9 @@ export default defineConfig({
   plugins: [react()],
   base: "./",
   build: {
-    outDir: "dist",
+    // The capstone checklist expects the production bundle inside server/build;
+    // `npm run deploy` copies it to docs/ so GitHub Pages can serve it.
+    outDir: "server/build",
+    emptyOutDir: true,
   },
 });

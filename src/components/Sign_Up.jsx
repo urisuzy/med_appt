@@ -52,7 +52,7 @@ function Sign_Up() {
 
     try {
       // Registration API request (Task 5)
-      const response = await api.post("/register", payload);
+      const response = await api.post("/api/auth/register", payload);
       const token = response.data?.token || response.data?.authToken;
       if (token) {
         setToken(token);

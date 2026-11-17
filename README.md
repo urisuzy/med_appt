@@ -35,8 +35,8 @@ stayhealthy/
 │   └── components/
 │       ├── Navbar.jsx          # navigation + logout
 │       ├── LandingPage.jsx     # hero, tagline and feature grid
-│       ├── Sign_Up.jsx         # registration form -> POST /register
-│       ├── Login.jsx           # login form -> POST /login
+│       ├── Sign_Up.jsx         # registration form -> POST /api/auth/register
+│       ├── Login.jsx           # login form -> POST /api/auth/login
 │       ├── FindDoctorSearch.jsx# speciality / location search
 │       ├── AppointmentForm.jsx # Name, Phone, Date, Time
 │       ├── AppointmentFormIC.jsx # instant consultation: Name + Phone only
@@ -49,8 +49,8 @@ stayhealthy/
 ├── docs/                       # production build served by GitHub Pages
 └── artefacts/
     ├── build                   # terminal output of `npm run build`
-    ├── register                # cURL request/response for POST /register
-    └── login                   # cURL request/response for POST /login
+    ├── register                # cURL request/response for POST /api/auth/register
+    └── login                   # cURL request/response for POST /api/auth/login
 ```
 
 ## Getting started
@@ -72,17 +72,29 @@ sign up, login, booking and review flows are all exercisable offline.
 ## Production build
 
 ```bash
-npm run build        # writes the bundle to ./dist
-npm run preview      # serves ./dist on http://localhost:4173
+npm run build        # writes the bundle to ./server/build
+npm run deploy       # copies server/build to ./docs (served by GitHub Pages)
+npm run preview      # serves the last build locally
 ```
 
-The build transcript is stored in `artefacts/build`, and the generated bundle is
-committed to `docs/` so GitHub Pages can serve it directly.
+The build transcript is stored in `artefacts/build`. The production bundle is
+committed twice: `server/build/` (the build folder required by the capstone
+checklist) and `docs/` (the folder GitHub Pages publishes).
+
+## Deployment
+
+The site is published with GitHub Pages from the `docs/` folder of the `main`
+branch:
+
+**https://urisuzy.github.io/med_appt/**
+
+Routing uses `HashRouter`, so deep links such as `/#/appointments` work without
+any server-side rewrite rules.
 
 ## API contract
 
 ```http
-POST /register
+POST /api/auth/register
 { "role": "patient", "name": "Reza Maulana", "email": "reza@example.com",
   "phone": "9876543210", "password": "secret123" }
 
@@ -91,7 +103,7 @@ POST /register
 ```
 
 ```http
-POST /login
+POST /api/auth/login
 { "email": "reza@example.com", "password": "secret123" }
 
 200 OK

@@ -9,18 +9,18 @@ transforming...
 ✓ 108 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/index.html                   2.04 kB │ gzip:  0.85 kB
-dist/assets/index-Bxz66Jie.css   11.09 kB │ gzip:  2.80 kB
-dist/assets/index-B10neKW3.js   250.17 kB │ gzip: 82.23 kB
-✓ built in 417ms
+server/build/index.html                   3.87 kB │ gzip:  1.39 kB
+server/build/assets/index-Bxz66Jie.css   11.09 kB │ gzip:  2.80 kB
+server/build/assets/index-PGPo_z4R.js   250.63 kB │ gzip: 82.35 kB
+✓ built in 396ms
 
-$ ls -lh dist dist/assets
-dist:
+$ ls -lh server/build server/build/assets
+server/build:
 total 8
-drwxr-xr-x@ 4 developer  staff   128B Nov 17 10:42 assets
--rw-r--r--@ 1 developer  staff   2.0K Nov 17 10:42 index.html
+drwxr-xr-x@ 4 developer  staff   128B Nov 17 10:58 assets
+-rw-r--r--@ 1 developer  staff   3.8K Nov 17 10:58 index.html
 
-dist/assets:
+server/build/assets:
 total 520
--rw-r--r--@ 1 developer  staff   244K Nov 17 10:42 index-B10neKW3.js
--rw-r--r--@ 1 developer  staff    11K Nov 17 10:42 index-Bxz66Jie.css
+-rw-r--r--@ 1 developer  staff    11K Nov 17 10:58 index-Bxz66Jie.css
+-rw-r--r--@ 1 developer  staff   245K Nov 17 10:58 index-PGPo_z4R.js

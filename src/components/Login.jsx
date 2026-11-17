@@ -20,7 +20,7 @@ function Login() {
 
     try {
       // Authentication API request (Task 6)
-      const response = await api.post("/login", {
+      const response = await api.post("/api/auth/login", {
         email: form.email.trim().toLowerCase(),
         password: form.password,
       });

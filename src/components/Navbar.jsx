@@ -41,7 +41,7 @@ function Navbar() {
           <NavLink to="/" end>
             Home
           </NavLink>
-          <NavLink to="/appointments">Appointment</NavLink>
+          <NavLink to="/appointments">Appointments</NavLink>
           <NavLink to="/reviews">Reviews</NavLink>
         </nav>
 

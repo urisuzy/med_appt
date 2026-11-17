@@ -39,7 +39,7 @@ const readBody = (req) =>
   });
 
 const server = http.createServer(async (req, res) => {
-  if (req.method === "POST" && req.url === "/register") {
+  if (req.method === "POST" && req.url === "/api/auth/register") {
     try {
       const body = await readBody(req);
       const { name, email, password, phone, role = "patient" } = body;
@@ -59,7 +59,7 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  if (req.method === "POST" && req.url === "/login") {
+  if (req.method === "POST" && req.url === "/api/auth/login") {
     try {
       const { email, password } = await readBody(req);
       const user = users.get(email);
