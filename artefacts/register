@@ -1,0 +1,21 @@
+$ curl -i -X POST http://localhost:5001/register \
+    -H 'Content-Type: application/json' \
+    -d '{"role":"patient","name":"Reza Maulana","email":"reza@example.com","phone":"9876543210","password":"secret123"}'
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 221
+Date: Tue, 17 Nov 2026 03:42:38 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{
+  "message": "User registered successfully",
+  "token": "460f172386531a2e9e9d026e91f8b982",
+  "user": {
+    "name": "Reza Maulana",
+    "email": "reza@example.com",
+    "phone": "9876543210",
+    "role": "patient"
+  }
+}
